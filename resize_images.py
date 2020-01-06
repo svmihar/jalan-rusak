@@ -1,6 +1,7 @@
 import os
 import glob
 import cv2
+import tqdm 
 
 if __name__ == "__main__":
     import argparse
@@ -44,8 +45,7 @@ if __name__ == "__main__":
             len(fnames), raw_dir, target_size
         )
     )
-    for i, fname in enumerate(fnames):
-        print(".", end="", flush=True)
+    for i, fname in tqdm(enumerate(fnames)):
         img = cv2.imread(fname)
         img_small = cv2.resize(img, target_size)
         new_fname = "{}.{}".format(str(i), ext)
