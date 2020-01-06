@@ -12,7 +12,7 @@ def main(video_file, path_to_save):
     count = 0
     success = True
     for i in tqdm(range(length)):
-        cv2.imwrite(f"{path_to_save}/frame_{count}.jpg", image)
+        cv2.imwrite(f"{path_to_save}/frame_{i}.jpg", image)
         success, image = vidcap.read()
 
 
